@@ -75,8 +75,7 @@ class DataTransformation:
             logging.info(f"Test DataFrame head: \n{test_df.head().to_string()}")
             
             logging.info("Obtaining preprocessor object")
-            preprocessor_obj = self.get_data_trandformer_object()
-
+            preprocessor_obj = self.get_data_transformer_object()
             target_column_name = "math_score" # target column
             numerical_columns = ["writing_score", "reading_score"] # numerical columns
 
