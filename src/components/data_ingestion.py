@@ -12,6 +12,9 @@ from dataclasses import dataclass
 from src.components.data_transformation import DataTransformation
 from src.components.data_transformation import DataTransformationConfig
 
+from src.components.model_trainer import ModelTrainer
+from src.components.model_trainer import ModelTrainerConfig
+
 @dataclass  # dataclass decorator: inside a class to define the class variable you basically use init right but if you try to use this data class right you will be able to directly define your class variables 
 class DataIngestionConfig:
     # this are inputs that give to data ingestion component
@@ -51,5 +54,9 @@ if __name__ == "__main__":
     print(train_data, test_data)
 
     data_transformation = DataTransformation()
-    data_transformation.initiate_data_transformation(train_data, test_data)
+    train_arr, test_arr,_ = data_transformation.initiate_data_transformation(train_data, test_data)
     logging.info("Read the dataset as dataframe")
+
+    modeltrainer = ModelTrainer()
+    print(modeltrainer.initiate_model_trainer(train_arr, test_arr))
+    logging.info("Model training is completed")
