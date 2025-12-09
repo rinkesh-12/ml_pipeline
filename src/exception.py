@@ -1,5 +1,5 @@
 import sys
-import logging
+# from src.logger import logging
 import os
 
 def error_message_detail(error, error_detail: sys):
@@ -25,3 +25,4 @@ class CustomException(Exception):
 #     except Exception as e:
 #         logging.info("Logger has beenv 11111 set up.")
 #         raise CustomException(e, sys)
+# student performance indicator
